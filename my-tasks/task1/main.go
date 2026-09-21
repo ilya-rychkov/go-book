@@ -57,6 +57,7 @@ func countWords(f *os.File, counts map[string]int, foundIn map[string][]string) 
 		}
 		}
 	}
-	//fmt.Println(counts)
+	fmt.Println(foundIn, "foundIn")
+	fmt.Println(counts, "counts")
 } 
 			
