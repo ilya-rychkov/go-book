@@ -1,0 +1,26 @@
+# Бинарники Go
+app
+*.exe
+*.test
+*.out
+
+# Папка с зависимостями
+vendor/
+
+# Настройки IDE
+.idea/
+.vscode/
+
+# Временные файлы
+*.tmp
+*.log
+
+# GIF из Lissajous
+*.gif
+
+# Файлы данных
+example.txt
+result.txtapp
+*.gif
+example.txt
+*.exe

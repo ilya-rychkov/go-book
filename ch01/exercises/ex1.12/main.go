@@ -17,7 +17,6 @@ import (
 	"time"
 )
 
-
 var palette = []color.Color{color.White, color.Black}
 
 const (
@@ -50,20 +49,20 @@ func main() {
 					nframes = n
 				}
 			}
-		if v := r.FormValue("delay"); v != "" {
-			if n, err := strconv.Atoi(v); err == nil {
-				delay = n
+			if v := r.FormValue("delay"); v != "" {
+				if n, err := strconv.Atoi(v); err == nil {
+					delay = n
+				}
 			}
-		}
-		
-	lissajous(w, cycles, size, nframes, delay)
+
+			lissajous(w, cycles, size, nframes, delay)
 		}
 		http.HandleFunc("/", handler)
 		//!-http
 		log.Fatal(http.ListenAndServe("localhost:8000", nil))
 		return
 	}
-	
+
 	lissajous(os.Stdout, 5, 100, 64, 8)
 }
 
@@ -87,4 +86,3 @@ func lissajous(out io.Writer, cycles, size, nframes, delay int) {
 	}
 	gif.EncodeAll(out, &anim) // NOTE: ignoring encoding errors
 }
-

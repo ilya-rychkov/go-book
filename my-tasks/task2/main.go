@@ -1,19 +1,19 @@
-package main//вывести файлы, в которых буква встречается более 1 раза
+package main //вывести файлы, в которых буква встречается более 1 раза
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"unicode"
-	"bufio"
 	"path/filepath"
 	"strings"
+	"unicode"
 )
 
 func main() {
 	counts := make(map[rune]int)
 	foundIn := make(map[rune][]string)
 	files := os.Args[1:]
-	
+
 	for _, arg := range files {
 		f, err := os.Open(arg)
 		if err != nil {
@@ -30,7 +30,7 @@ func main() {
 	}
 }
 
-func in(needle string, letters[]string) bool{
+func in(needle string, letters []string) bool {
 	for _, l := range letters {
 		if l == needle {
 			return true
@@ -55,6 +55,6 @@ func countLetters(f *os.File, counts map[rune]int, foundIn map[rune][]string) {
 
 			}
 		}
-		
+
 	}
 }

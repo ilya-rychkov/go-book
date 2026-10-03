@@ -14,7 +14,7 @@ func main() {
 	foundIn := make(map[string][]string)
 	files := os.Args[1:]
 	//fmt.Println(files)
-	
+
 	for _, arg := range files {
 		f, err := os.Open(arg)
 		if err != nil {
@@ -32,21 +32,21 @@ func main() {
 	}
 }
 
-	func in(needle string, strings []string) bool {
-		for _, s := range strings {
-			if s == needle {
-				return true
-			}
+func in(needle string, strings []string) bool {
+	for _, s := range strings {
+		if s == needle {
+			return true
 		}
-		return false
 	}
+	return false
+}
 
 func countWords(f *os.File, counts map[string]int, foundIn map[string][]string) {
 	input := bufio.NewScanner(f)
 	for input.Scan() {
 		line := input.Text()
 		words := strings.FieldsFunc(line, func(r rune) bool {
-    		return !unicode.IsLetter(r)
+			return !unicode.IsLetter(r)
 		})
 		filename := filepath.Base(f.Name())
 		for _, word := range words {
@@ -54,10 +54,9 @@ func countWords(f *os.File, counts map[string]int, foundIn map[string][]string) 
 			counts[word]++
 			if !in(filename, foundIn[word]) {
 				foundIn[word] = append(foundIn[word], filename)
-		}
+			}
 		}
 	}
 	fmt.Println(foundIn, "foundIn")
 	fmt.Println(counts, "counts")
-} 
-			
+}

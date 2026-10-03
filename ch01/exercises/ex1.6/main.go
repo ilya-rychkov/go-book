@@ -17,7 +17,7 @@ var palette = []color.Color{color.Black}
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
-	
+
 	// Генерируем 10 случайных цветов
 	for i := 0; i < 10; i++ {
 		palette = append(palette, color.RGBA{
@@ -27,7 +27,7 @@ func main() {
 			255,
 		})
 	}
-	
+
 	if len(os.Args) > 1 && os.Args[1] == "web" {
 		handler := func(w http.ResponseWriter, r *http.Request) {
 			lissajous(w)
@@ -57,7 +57,7 @@ func lissajous(out io.Writer) {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			// Меняем цвет по мере рисования
-			colorIndex := uint8(int(t*10) % (len(palette) - 1) + 1)
+			colorIndex := uint8(int(t*10)%(len(palette)-1) + 1)
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), colorIndex)
 		}
 		phase += 0.1
