@@ -5,15 +5,12 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
+	"net/http"
 	"os"
 	"strconv"
-)
-
-import (
-	"log"
-	"net/http"
 	"time"
 )
 

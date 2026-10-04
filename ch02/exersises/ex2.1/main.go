@@ -1,8 +1,9 @@
 package main
 
 import (
-	"ex2.1/tempconv"
 	"fmt"
+
+	"ex2.1/tempconv"
 )
 
 func main() {
