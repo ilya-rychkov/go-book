@@ -20,8 +20,8 @@ vendor/
 
 # Файлы данных
 example.txt
-result.txtapp
-*.gif
-example.txt
-*.exe
+result.txt
+
+# Zone.Identifier (Windows)
 *.Zone.Identifier
+*:Zone.Identifier
